@@ -9,7 +9,6 @@ import authRouter from './routes/auth.routes.js';
 import userRouter from './routes/users.routes.js';
 import subscriptionRouter from './routes/subscription.routes.js';
 import errorMiddleware from "./middlewares/error.middleware.js";
-import errorMiddleware from "./middlewares/error.middleware.js";
 
 const app = express();
 app.use(express.json());
