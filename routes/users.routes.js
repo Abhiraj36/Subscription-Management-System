@@ -1,16 +1,15 @@
-//C:\Users\abhir_56d9u3c\Desktop\Subscription-Management-System\routes\users.routes.js
+
 
 import { Router } from 'express';
+import authorize from '../middlewares/auth.middlware.js';
+import { getUser, getUsers } from "../controllers/user.controller.js"
 
 const userRouter = Router();
 
-userRouter.get('/', (req, res) => {
-  res.json({ title: 'Get all user' });
-});
+userRouter.get('/', getUsers);
 
-userRouter.get('/:id', (req, res) => {
-  res.json({ title: 'Get all user details' });
-});
+userRouter.get('/:id', authorize, getUser);
+  
 
 userRouter.post('/', (req, res) => {
   res.json({ title: 'Create new user' });
