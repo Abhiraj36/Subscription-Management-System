@@ -1,4 +1,3 @@
-// C:\Users\abhir_56d9u3c\Desktop\Subscription-Management-System\app.js
 
 import express from "express";
 import cookieParser from "cookie-parser";
@@ -9,11 +8,13 @@ import authRouter from './routes/auth.routes.js';
 import userRouter from './routes/users.routes.js';
 import subscriptionRouter from './routes/subscription.routes.js';
 import errorMiddleware from "./middlewares/error.middleware.js";
+import arcjetMiddleware from "./middlewares/arcjet.middleware.js";
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded ({ extended:false }));
 app.use(cookieParser());
+app.use(arcjetMiddleware);
 
 // Middleware
 app.use(express.json());
